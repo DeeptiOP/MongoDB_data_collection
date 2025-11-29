@@ -1,0 +1,52 @@
+[
+  {
+    "_id": 1,
+    "user_id": 1,
+    "problems_solved": 10
+  },
+  {
+    "_id": 2,
+    "user_id": 2,
+    "problems_solved": 20
+  },
+  {
+    "_id": 3,
+    "user_id": 3,
+    "problems_solved": 30
+  },
+  {
+    "_id": 4,
+    "user_id": 4,
+    "problems_solved": 40
+  },
+  {
+    "_id": 5,
+    "user_id": 5,
+    "problems_solved": 50
+  },
+  {
+    "_id": 6,
+    "user_id": 6,
+    "problems_solved": 60
+  },
+  {
+    "_id": 7,
+    "user_id": 7,
+    "problems_solved": 70
+  },
+  {
+    "_id": 8,
+    "user_id": 8,
+    "problems_solved": 80
+  },
+  {
+    "_id": 9,
+    "user_id": 9,
+    "problems_solved": 90
+  },
+  {
+    "_id": 10,
+    "user_id": 10,
+    "problems_solved": 100
+  }
+]
