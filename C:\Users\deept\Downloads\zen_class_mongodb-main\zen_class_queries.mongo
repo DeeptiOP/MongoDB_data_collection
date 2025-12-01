@@ -1,0 +1,260 @@
+// Use Zen Class database
+use zenclass
+
+// Create collections
+db.createCollection("mentors")
+db.createCollection("users")
+db.createCollection("topics")
+db.createCollection("tasks")
+db.createCollection("attendance")
+db.createCollection("codekata")
+db.createCollection("company_drives")
+
+// Insert mentors 
+db.mentors.insertMany([
+  { mentor_id: "M1", name: "Anita Roy", email: "anita@zenclass.com", expertise: "Frontend" },
+  { mentor_id: "M2", name: "Ravi Kumar", email: "ravi@zenclass.com", expertise: "Backend" },
+  { mentor_id: "M3", name: "Sonal Mehta", email: "sonal@zenclass.com", expertise: "Full Stack" },
+  { mentor_id: "M4", name: "Vikram Singh", email: "vikram@zenclass.com", expertise: "Database" },
+  { mentor_id: "M5", name: "Priya Iyer", email: "priya@zenclass.com", expertise: "Frontend" },
+  { mentor_id: "M6", name: "Rahul Nair", email: "rahul@zenclass.com", expertise: "ReactJS" },
+  { mentor_id: "M7", name: "Deepa Sen", email: "deepa@zenclass.com", expertise: "NodeJS" },
+  { mentor_id: "M8", name: "Karthik Rao", email: "karthik@zenclass.com", expertise: "MongoDB" },
+  { mentor_id: "M9", name: "Asha Verma", email: "asha@zenclass.com", expertise: "UI/UX" },
+  { mentor_id: "M10", name: "Suresh Patel", email: "suresh@zenclass.com", expertise: "DevOps" },
+  { mentor_id: "M11", name: "Meera Das", email: "meera@zenclass.com", expertise: "ExpressJS" },
+  { mentor_id: "M12", name: "Neha Kapoor", email: "neha@zenclass.com", expertise: "Authentication" }
+])
+
+// Insert users 
+db.users.insertMany([
+  { user_id: "U1", name: "Arjun Sharma", email: "arjun@zen.com", batch: "B1", mentor_id: "M1", placement: false },
+  { user_id: "U2", name: "Sneha Reddy", email: "sneha@zen.com", batch: "B1", mentor_id: "M1", placement: true },
+  { user_id: "U3", name: "Ravi Teja", email: "ravi@zen.com", batch: "B2", mentor_id: "M2", placement: true },
+  { user_id: "U4", name: "Divya Menon", email: "divya@zen.com", batch: "B2", mentor_id: "M2", placement: false },
+  { user_id: "U5", name: "Amit Joshi", email: "amit@zen.com", batch: "B3", mentor_id: "M3", placement: false },
+  { user_id: "U6", name: "Priya Shah", email: "priya@zen.com", batch: "B3", mentor_id: "M3", placement: true },
+  { user_id: "U7", name: "Kiran Rao", email: "kiran@zen.com", batch: "B3", mentor_id: "M4", placement: false },
+  { user_id: "U8", name: "Manoj Pillai", email: "manoj@zen.com", batch: "B4", mentor_id: "M4", placement: false },
+  { user_id: "U9", name: "Lakshmi Nair", email: "lakshmi@zen.com", batch: "B4", mentor_id: "M5", placement: false },
+  { user_id: "U10", name: "Raj Patel", email: "raj@zen.com", batch: "B4", mentor_id: "M5", placement: true },
+  { user_id: "U11", name: "Simran Kaur", email: "simran@zen.com", batch: "B5", mentor_id: "M6", placement: true },
+  { user_id: "U12", name: "Ajay Mehta", email: "ajay@zen.com", batch: "B5", mentor_id: "M6", placement: false },
+  { user_id: "U13", name: "Deepika Jain", email: "deepika@zen.com", batch: "B6", mentor_id: "M7", placement: false },
+  { user_id: "U14", name: "Harish Gupta", email: "harish@zen.com", batch: "B6", mentor_id: "M7", placement: true },
+  { user_id: "U15", name: "Tanya Bhat", email: "tanya@zen.com", batch: "B7", mentor_id: "M8", placement: false },
+  { user_id: "U16", name: "Rohit Das", email: "rohit@zen.com", batch: "B7", mentor_id: "M8", placement: false },
+  { user_id: "U17", name: "Kavya Iyer", email: "kavya@zen.com", batch: "B8", mentor_id: "M9", placement: true },
+  { user_id: "U18", name: "Naveen Raj", email: "naveen@zen.com", batch: "B8", mentor_id: "M9", placement: false },
+  { user_id: "U19", name: "Sahil Agarwal", email: "sahil@zen.com", batch: "B8", mentor_id: "M10", placement: false },
+  { user_id: "U20", name: "Anjali Singh", email: "anjali@zen.com", batch: "B9", mentor_id: "M10", placement: true },
+  { user_id: "U21", name: "Ramesh Kumar", email: "ramesh@zen.com", batch: "B9", mentor_id: "M11", placement: true },
+  { user_id: "U22", name: "Bhavna Ghosh", email: "bhavna@zen.com", batch: "B9", mentor_id: "M11", placement: false },
+  { user_id: "U23", name: "Nikhil Taneja", email: "nikhil@zen.com", batch: "B10", mentor_id: "M12", placement: false },
+  { user_id: "U24", name: "Isha Malhotra", email: "isha@zen.com", batch: "B10", mentor_id: "M12", placement: true },
+  { user_id: "U25", name: "Aditya Nair", email: "aditya@zen.com", batch: "B11", mentor_id: "M1", placement: false },
+  { user_id: "U26", name: "Snehal Pawar", email: "snehal@zen.com", batch: "B11", mentor_id: "M2", placement: false },
+  { user_id: "U27", name: "Nitin Bhatia", email: "nitin@zen.com", batch: "B11", mentor_id: "M3", placement: false },
+  { user_id: "U28", name: "Tara Singh", email: "tara@zen.com", batch: "B12", mentor_id: "M4", placement: false },
+  { user_id: "U29", name: "Karthik Iyer", email: "karthik@zen.com", batch: "B12", mentor_id: "M5", placement: true },
+  { user_id: "U30", name: "Mehul Desai", email: "mehul@zen.com", batch: "B12", mentor_id: "M6", placement: false }
+])
+
+// Insert topics 
+db.topics.insertMany([
+  { topic_id: "T1", topic_name: "Javascript Basics", taught_on: "2020-10-01" },
+  { topic_id: "T2", topic_name: "HTML", taught_on: "2020-10-02" },
+  { topic_id: "T3", topic_name: "CSS", taught_on: "2020-10-05" },
+  { topic_id: "T4", topic_name: "Tailwind CSS", taught_on: "2020-10-07" },
+  { topic_id: "T5", topic_name: "Javascript Advanced", taught_on: "2020-10-10" },
+  { topic_id: "T6", topic_name: "ReactJS", taught_on: "2020-10-15" },
+  { topic_id: "T7", topic_name: "MySQL", taught_on: "2020-10-18" },
+  { topic_id: "T8", topic_name: "MongoDB", taught_on: "2020-10-20" },
+  { topic_id: "T9", topic_name: "NodeJS", taught_on: "2020-10-22" },
+  { topic_id: "T10", topic_name: "ExpressJS", taught_on: "2020-10-24" },
+  { topic_id: "T11", topic_name: "Mongoose", taught_on: "2020-10-26" },
+  { topic_id: "T12", topic_name: "API Creation", taught_on: "2020-10-28" },
+  { topic_id: "T13", topic_name: "Authentication", taught_on: "2020-10-30" }
+])
+
+// Insert tasks 
+db.tasks.insertMany([
+  { task_id: "TA1", topic_id: "T1", title: "Variables and Loops", assigned_on: "2020-10-01", submissions: [{ user_id: "U1" }, { user_id: "U2" }] },
+  { task_id: "TA2", topic_id: "T2", title: "HTML Page Layout", assigned_on: "2020-10-02", submissions: [{ user_id: "U3" }, { user_id: "U4" }] },
+  { task_id: "TA3", topic_id: "T3", title: "CSS Styling", assigned_on: "2020-10-05", submissions: [{ user_id: "U5" }, { user_id: "U6" }] },
+  { task_id: "TA4", topic_id: "T4", title: "Tailwind Project", assigned_on: "2020-10-07", submissions: [{ user_id: "U7" }] },
+  { task_id: "TA5", topic_id: "T5", title: "JS DOM Manipulation", assigned_on: "2020-10-10", submissions: [{ user_id: "U8" }, { user_id: "U9" }] },
+  { task_id: "TA6", topic_id: "T6", title: "React Components", assigned_on: "2020-10-15", submissions: [{ user_id: "U10" }] },
+  { task_id: "TA7", topic_id: "T7", title: "Database Tables", assigned_on: "2020-10-18", submissions: [{ user_id: "U11" }, { user_id: "U12" }] },
+  { task_id: "TA8", topic_id: "T8", title: "Mongo CRUD", assigned_on: "2020-10-20", submissions: [{ user_id: "U13" }, { user_id: "U14" }] },
+  { task_id: "TA9", topic_id: "T9", title: "NodeJS Server", assigned_on: "2020-10-22", submissions: [{ user_id: "U15" }] },
+  { task_id: "TA10", topic_id: "T10", title: "Express Routing", assigned_on: "2020-10-24", submissions: [{ user_id: "U16" }] },
+  { task_id: "TA11", topic_id: "T11", title: "Mongoose Models", assigned_on: "2020-10-26", submissions: [{ user_id: "U17" }, { user_id: "U18" }] },
+  { task_id: "TA12", topic_id: "T12", title: "API Endpoints", assigned_on: "2020-10-28", submissions: [{ user_id: "U19" }, { user_id: "U20" }] },
+  { task_id: "TA13", topic_id: "T13", title: "User Authentication", assigned_on: "2020-10-30", submissions: [{ user_id: "U21" }] }
+])
+
+// Insert attendance 
+db.attendance.insertMany([
+  { user_id: "U1", date: "2020-10-15", status: "Present" },
+  { user_id: "U2", date: "2020-10-15", status: "Absent" },
+  { user_id: "U3", date: "2020-10-16", status: "Present" },
+  { user_id: "U4", date: "2020-10-16", status: "Absent" },
+  { user_id: "U5", date: "2020-10-17", status: "Present" },
+  { user_id: "U6", date: "2020-10-17", status: "Present" },
+  { user_id: "U7", date: "2020-10-18", status: "Absent" },
+  { user_id: "U8", date: "2020-10-18", status: "Present" },
+  { user_id: "U9", date: "2020-10-19", status: "Absent" },
+  { user_id: "U10", date: "2020-10-19", status: "Present" },
+  { user_id: "U11", date: "2020-10-20", status: "Absent" },
+  { user_id: "U12", date: "2020-10-20", status: "Present" },
+  { user_id: "U13", date: "2020-10-21", status: "Present" },
+  { user_id: "U14", date: "2020-10-21", status: "Absent" },
+  { user_id: "U15", date: "2020-10-22", status: "Present" },
+  { user_id: "U16", date: "2020-10-22", status: "Present" },
+  { user_id: "U17", date: "2020-10-23", status: "Absent" },
+  { user_id: "U18", date: "2020-10-23", status: "Present" },
+  { user_id: "U19", date: "2020-10-24", status: "Present" },
+  { user_id: "U20", date: "2020-10-24", status: "Absent" },
+  { user_id: "U21", date: "2020-10-25", status: "Present" },
+  { user_id: "U22", date: "2020-10-25", status: "Absent" },
+  { user_id: "U23", date: "2020-10-26", status: "Present" },
+  { user_id: "U24", date: "2020-10-26", status: "Present" },
+  { user_id: "U25", date: "2020-10-27", status: "Absent" },
+  { user_id: "U26", date: "2020-10-27", status: "Present" },
+  { user_id: "U27", date: "2020-10-28", status: "Present" },
+  { user_id: "U28", date: "2020-10-28", status: "Absent" },
+  { user_id: "U29", date: "2020-10-29", status: "Present" },
+  { user_id: "U30", date: "2020-10-29", status: "Present" }
+])
+
+// Insert codekata
+db.codekata.insertMany([
+  { user_id: "U1", problems_solved: 40 },
+  { user_id: "U2", problems_solved: 55 },
+  { user_id: "U3", problems_solved: 60 },
+  { user_id: "U4", problems_solved: 42 },
+  { user_id: "U5", problems_solved: 38 },
+  { user_id: "U6", problems_solved: 74 },
+  { user_id: "U7", problems_solved: 20 },
+  { user_id: "U8", problems_solved: 25 },
+  { user_id: "U9", problems_solved: 33 },
+  { user_id: "U10", problems_solved: 48 },
+  { user_id: "U11", problems_solved: 64 },
+  { user_id: "U12", problems_solved: 29 },
+  { user_id: "U13", problems_solved: 81 },
+  { user_id: "U14", problems_solved: 70 },
+  { user_id: "U15", problems_solved: 90 },
+  { user_id: "U16", problems_solved: 44 },
+  { user_id: "U17", problems_solved: 56 },
+  { user_id: "U18", problems_solved: 60 },
+  { user_id: "U19", problems_solved: 49 },
+  { user_id: "U20", problems_solved: 58 },
+  { user_id: "U21", problems_solved: 80 },
+  { user_id: "U22", problems_solved: 37 },
+  { user_id: "U23", problems_solved: 66 },
+  { user_id: "U24", problems_solved: 32 },
+  { user_id: "U25", problems_solved: 45 },
+  { user_id: "U26", problems_solved: 77 },
+  { user_id: "U27", problems_solved: 88 },
+  { user_id: "U28", problems_solved: 65 },
+  { user_id: "U29", problems_solved: 53 },
+  { user_id: "U30", problems_solved: 95 }
+])
+
+// Insert company drives
+db.company_drives.insertMany([
+  { company_id: "C1", company: "Google", drive_date: "2020-10-15", students_attended: ["U1", "U2", "U3"] },
+  { company_id: "C2", company: "Amazon", drive_date: "2020-10-16", students_attended: ["U4", "U5", "U6"] },
+  { company_id: "C3", company: "Flipkart", drive_date: "2020-10-17", students_attended: ["U7", "U8", "U9"] },
+  { company_id: "C4", company: "Infosys", drive_date: "2020-10-18", students_attended: ["U10", "U11"] },
+  { company_id: "C5", company: "Zoho", drive_date: "2020-10-19", students_attended: ["U12", "U13", "U14"] },
+  { company_id: "C6", company: "Wipro", drive_date: "2020-10-20", students_attended: ["U15", "U16", "U17"] },
+  { company_id: "C7", company: "Cognizant", drive_date: "2020-10-21", students_attended: ["U18", "U19"] },
+  { company_id: "C8", company: "Accenture", drive_date: "2020-10-22", students_attended: ["U20", "U21", "U22"] },
+  { company_id: "C9", company: "Paytm", drive_date: "2020-10-23", students_attended: ["U23", "U24"] },
+  { company_id: "C10", company: "TCS", drive_date: "2020-10-24", students_attended: ["U25", "U26"] },
+  { company_id: "C11", company: "Capgemini", drive_date: "2020-10-25", students_attended: ["U27", "U28", "U29", "U30"] },
+  { company_id: "C12", company: "Dell", drive_date: "2020-10-26", students_attended: ["U1", "U5"] },
+  { company_id: "C13", company: "Adobe", drive_date: "2020-10-27", students_attended: ["U3", "U10"] },
+  { company_id: "C14", company: "HP", drive_date: "2020-10-28", students_attended: ["U8", "U9", "U12"] },
+  { company_id: "C15", company: "Tech Mahindra", drive_date: "2020-10-29", students_attended: ["U13", "U15"] },
+  { company_id: "C16", company: "Mindtree", drive_date: "2020-10-30", students_attended: ["U16", "U18", "U20"] },
+  { company_id: "C17", company: "IBM", drive_date: "2020-11-01", students_attended: ["U22", "U23"] },
+  { company_id: "C18", company: "Oracle", drive_date: "2020-11-02", students_attended: ["U25", "U26"] },
+  { company_id: "C19", company: "CISCO", drive_date: "2020-11-03", students_attended: ["U27", "U28"] },
+  { company_id: "C20", company: "Netflix", drive_date: "2020-11-04", students_attended: ["U29", "U30"] },
+  { company_id: "C21", company: "Samsung", drive_date: "2020-10-10", students_attended: ["U1", "U3"] },
+  { company_id: "C22", company: "LG", drive_date: "2020-10-11", students_attended: ["U5", "U7"] },
+  { company_id: "C23", company: "Intel", drive_date: "2020-10-12", students_attended: ["U9", "U11"] },
+  { company_id: "C24", company: "Nvidia", drive_date: "2020-10-13", students_attended: ["U13", "U14"] },
+  { company_id: "C25", company: "Tesla", drive_date: "2020-10-14", students_attended: ["U15", "U17"] },
+  { company_id: "C26", company: "Meta", drive_date: "2020-10-08", students_attended: ["U19", "U21"] },
+  { company_id: "C27", company: "Apple", drive_date: "2020-10-09", students_attended: ["U23", "U24"] },
+  { company_id: "C28", company: "Ola", drive_date: "2020-10-05", students_attended: ["U25", "U26"] },
+  { company_id: "C29", company: "Swiggy", drive_date: "2020-10-06", students_attended: ["U27", "U28"] },
+  { company_id: "C30", company: "Zomato", drive_date: "2020-10-07", students_attended: ["U29", "U30"] }
+])
+
+// ===== QUERIES =====
+// 1.Find all the topics and tasks which are thought in the month of October
+db.topics.aggregate([
+  { $match: { taught_on: { $gte: "2020-10-01", $lte: "2020-10-31" } } },
+  { $project: { _id: 0, name: "$topic_name", date: "$taught_on", type: "Topic" } },
+  { $unionWith: {
+      coll: "tasks",
+      pipeline: [
+        { $match: { assigned_on: { $gte: "2020-10-01", $lte: "2020-10-31" } } },
+        { $project: { _id: 0, name: "$title", date: "$assigned_on", type: "Task" } }
+      ]
+    }
+  }
+])
+
+// 2. Find all the company drives which appeared between 15-oct-2020 and 31-oct-2020
+db.company_drives.find({
+  drive_date: { $gte: "2020-10-15", $lte: "2020-10-31" }
+})
+
+// 3. Find all the company drives and students who are appeared for the placement
+db.company_drives.aggregate([
+  {
+    $lookup: {
+      from: "users",
+      localField: "students_attended",
+      foreignField: "user_id",
+      as: "students"
+    }
+  }
+])
+
+// 4. Find the number of problems solved by the user in codekata
+db.codekata.aggregate([
+  {
+    $lookup: {
+      from: "users",
+      localField: "user_id",
+      foreignField: "user_id",
+      as: "user"
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      "user.name": 1,
+      problems_solved: 1
+    }
+  }
+])
+
+// 5. Find all the mentors who have mentee count more than 15
+db.users.aggregate([
+  { $group: { _id: "$mentor_id", count: { $sum: 1 } } },
+  { $match: { count: { $gt: 15 } } }
+])
+
+// 6. Find the number of users who are absent and task is not submitted between 15-oct-2020 and 31-oct-2020
+db.attendance.find({
+  date: { $gte: "2020-10-15", $lte: "2020-10-31" },
+  status: "Absent"
+})
